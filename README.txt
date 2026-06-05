@@ -1,43 +1,195 @@
 # 🎓 Marks Management System
 
-A Java-based console application integrated with MySQL for managing student records, marks, and academic reports. The system provides separate functionalities for teachers and students, enabling efficient academic record management through a simple command-line interface.
+A Java-based **Student Marks Management System** developed using **Core Java, JDBC, and MySQL**. The application provides an efficient way to manage student records, examination marks, and academic reports through a simple console-based interface.
 
-## 📌 Project Overview
+## 🚀 Project Overview
 
-The Marks Management System is designed to automate the process of managing student information and examination marks. Teachers can add students, update marks, and generate reports, while students can view their academic performance.
+Managing student academic records manually can be time-consuming and prone to errors. This project automates the process of storing, updating, and retrieving student information and marks using a MySQL database.
 
-This project demonstrates the integration of:
+The system provides separate functionalities for teachers and students, ensuring organized academic record management.
 
-* Core Java
+### Key Objectives
+
+* Store student information securely
+* Manage examination marks efficiently
+* Generate academic reports
+* Reduce manual record-keeping efforts
+* Demonstrate Java-MySQL database integration
+
+---
+
+## 🛠 Technologies Used
+
+### Programming Language
+
+* Java
+
+### Database
+
+* MySQL
+
+### Database Connectivity
+
 * JDBC (Java Database Connectivity)
+
+### Development Tools
+
+* MySQL Workbench
+* Command Prompt
+* Java JDK 8+
+
+---
+
+## 🏗 System Architecture
+
+The application follows a simple layered architecture:
+
+### Java Application Layer
+
+* User Interface (Console)
+* Business Logic
+* Database Operations
+
+### Database Layer
+
 * MySQL Database
-* Object-Oriented Programming Concepts
+* Student Records
+* Teacher Records
+* Marks Management
+
+### Connectivity Layer
+
+* JDBC Driver
+* SQL Queries
+* Database Transactions
+
+---
 
 ## ✨ Features
 
 ### 👨‍🏫 Teacher Module
 
-* Secure teacher login
-* Add new student records
-* Enter and update student marks
-* View student details
-* Generate academic reports
+✅ Teacher Authentication
+
+✅ Add New Students
+
+✅ Update Student Information
+
+✅ Enter Examination Marks
+
+✅ Generate Student Reports
+
+✅ View Academic Performance
 
 ### 👨‍🎓 Student Module
 
-* View personal details
-* Check subject-wise marks
-* Access academic reports
+✅ View Personal Information
+
+✅ Check Subject-wise Marks
+
+✅ Access Academic Reports
 
 ### 🗄 Database Features
 
-* Persistent data storage using MySQL
-* Relational database design
-* Secure database connectivity through JDBC
+✅ Persistent Data Storage
+
+✅ Secure JDBC Connectivity
+
+✅ Relational Database Structure
+
+✅ Efficient Data Retrieval
 
 ---
 
-## 🏗️ Project Structure
+## 📂 Database Setup
+
+The project includes a SQL script:
+
+```text
+marksdb.sql
+```
+
+This script automatically creates:
+
+* Database
+* Required Tables
+* Relationships
+* Default Teacher Account
+
+### Default Teacher Login
+
+```text
+Username : admin
+Password : admin123
+```
+
+---
+
+## 📊 Functional Modules
+
+| Module                | Description                    |
+| --------------------- | ------------------------------ |
+| Teacher Login         | Authenticates teacher access   |
+| Student Management    | Add and manage student records |
+| Marks Management      | Insert and update marks        |
+| Report Generation     | Generate academic reports      |
+| Database Connectivity | JDBC-based MySQL integration   |
+
+---
+
+## ⚙️ Installation Guide
+
+### Step 1: Install Prerequisites
+
+* Java JDK 8 or Higher
+* MySQL Server
+* MySQL Workbench
+* MySQL Connector/J (JDBC Driver)
+
+---
+
+### Step 2: Create Database
+
+Open MySQL Workbench and execute:
+
+```sql
+marksdb.sql
+```
+
+This will create the complete database structure and default teacher account.
+
+---
+
+### Step 3: Compile Java Files
+
+Navigate to the `src` folder and run:
+
+```bash
+javac -cp .;"C:\path\to\mysql-connector-java-8.0.xx.jar" *.java
+```
+
+---
+
+### Step 4: Run Application
+
+```bash
+java -cp .;"C:\path\to\mysql-connector-java-8.0.xx.jar" Main
+```
+
+---
+
+### Step 5: Enter Database Credentials
+
+When prompted, enter your MySQL credentials:
+
+```text
+Database Username : root
+Database Password : your_password
+```
+
+---
+
+## 📁 Project Structure
 
 ```text
 MarksManagementSystem/
@@ -50,109 +202,46 @@ MarksManagementSystem/
 │   └── Main.java
 │
 ├── marksdb.sql
+│
 └── README.md
 ```
 
-### File Description
+---
 
-| File                | Description                                 |
-| ------------------- | ------------------------------------------- |
-| DBConnect.java      | Handles database connection using JDBC      |
-| Student.java        | Student model class                         |
-| Teacher.java        | Teacher operations and management functions |
-| StudentActions.java | Student-related functionalities             |
-| Main.java           | Application entry point and menu system     |
-| marksdb.sql         | Database schema and initial data            |
+## 📄 File Description
+
+### DBConnect.java
+
+Handles database connection by accepting MySQL credentials and establishing a JDBC connection.
+
+### Student.java
+
+Represents the Student model and stores student-related information.
+
+### Teacher.java
+
+Contains teacher operations such as adding students, entering marks, and generating reports.
+
+### StudentActions.java
+
+Provides functionalities available to students for viewing marks and reports.
+
+### Main.java
+
+Acts as the entry point of the application and manages menu navigation.
+
+### marksdb.sql
+
+Contains database creation scripts, table definitions, and default teacher credentials.
 
 ---
 
-## 🛠 Technologies Used
+## 🔒 Security Features
 
-| Technology      | Purpose                        |
-| --------------- | ------------------------------ |
-| Java            | Application Development        |
-| JDBC            | Database Connectivity          |
-| MySQL           | Database Management            |
-| MySQL Workbench | Database Administration        |
-| OOP Concepts    | Code Structure and Reusability |
-
----
-
-## 📋 Prerequisites
-
-Before running the project, ensure the following software is installed:
-
-* Java JDK 8 or later
-* MySQL Server
-* MySQL Workbench
-* MySQL Connector/J (JDBC Driver)
-
----
-
-## ⚙️ Installation & Setup
-
-### Step 1: Create Database
-
-Open MySQL Workbench and execute:
-
-```sql
-marksdb.sql
-```
-
-This will create:
-
-* Database
-* Required tables
-* Default teacher account
-
-### Step 2: Compile Source Files
-
-Navigate to the `src` folder and run:
-
-```bash
-javac -cp .;"C:\path\to\mysql-connector-java-8.0.xx.jar" *.java
-```
-
-### Step 3: Run Application
-
-```bash
-java -cp .;"C:\path\to\mysql-connector-java-8.0.xx.jar" Main
-```
-
-### Step 4: Enter Database Credentials
-
-When prompted, provide your MySQL credentials:
-
-```text
-Username: root
-Password: your_mysql_password
-```
-
----
-
-## 🔐 Default Teacher Login
-
-```text
-Username : admin
-Password : admin123
-```
-
----
-
-## 🗃 Database Design
-
-The system uses MySQL tables to store:
-
-* Teacher Information
-* Student Records
-* Subject Marks
-* Academic Reports
-
-The database schema is provided in:
-
-```text
-marksdb.sql
-```
+* Database credentials entered at runtime
+* No hardcoded database passwords
+* Authentication for teacher access
+* Structured database design
 
 ---
 
@@ -160,11 +249,12 @@ marksdb.sql
 
 This project demonstrates:
 
+* Object-Oriented Programming (OOP)
 * JDBC Connectivity
-* SQL Queries and Database Operations
+* SQL Database Operations
 * CRUD Operations
-* Java Exception Handling
-* Object-Oriented Programming
+* Exception Handling
+* Database Design
 * Console-Based Application Development
 
 ---
@@ -172,22 +262,23 @@ This project demonstrates:
 ## 🚀 Future Enhancements
 
 * Graphical User Interface (Java Swing / JavaFX)
-* Student Login Authentication
+* Student Authentication System
 * Attendance Management
 * Grade Calculation Automation
-* Export Reports to PDF
-* Web-Based Deployment
+* Report Export to PDF
+* Web-Based Version
+* Cloud Database Integration
 
 ---
 
-## 📸 Sample Workflow
+## 📷 Application Workflow
 
 1. Teacher logs into the system.
-2. Teacher adds student records.
-3. Teacher enters examination marks.
-4. Data is stored in MySQL database.
-5. Students can view their marks and reports.
-6. Reports can be generated for academic analysis.
+2. Student records are created and stored.
+3. Examination marks are entered.
+4. Data is saved in MySQL database.
+5. Students can view their marks.
+6. Academic reports are generated and displayed.
 
 ---
 
@@ -208,7 +299,8 @@ This project is developed for educational and learning purposes.
 ## ⭐ Acknowledgements
 
 * Java Development Kit (JDK)
-* MySQL Server
-* MySQL Connector/J
 * JDBC API
+* MySQL Server
+* MySQL Workbench
+* MySQL Connector/J
 * Open Source Java Community
